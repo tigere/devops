@@ -1,0 +1,9 @@
+
+<div class="text">
+  <div *ngIf="userInfo; else loginMsg">
+    <h1>{{userInfo.name}}, 欢迎!</h1>
+  </div>
+  <ng-template #loginMsg>
+    <h1>欢迎使用，请登陆</h1>
+  </ng-template>
+</div>

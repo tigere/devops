@@ -1,0 +1,36 @@
+.signin {
+  /*background-color: #DADADA;*/
+  height: 100%;
+  background: url('/assets/images/bg.jpg');
+  background-size: cover;
+  padding-top: 7em;
+}
+.grid {
+  height: 100%;
+  /*opacity:0.5;*/
+}
+.image {
+  margin-top: -100px;
+}
+.column {
+  max-width: 450px;
+}
+.field {
+  padding-top: 1em;
+}
+a {
+  float:right;
+  color: #FFFFFF;
+}
+a:hover, a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
+
+.login {
+  color: #FFFFFF;
+  background-color: #f05050;
+}
+:host input {
+  background: rgba(45,45,45,0.15);
+}
