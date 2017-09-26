@@ -6,6 +6,9 @@ import {SigninComponent} from "./common/signin/signin.component";
 import {SignupComponent} from "./common/signup/signup.component";
 import {PageNotFoundComponent} from "./common/pnf/pnf.component";
 import {DefaultModule} from "./module/default.module";
+import {FormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import {DefaultModule} from "./module/default.module";
   imports: [
     BrowserModule,
     DefaultModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
