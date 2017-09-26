@@ -55,7 +55,9 @@ export class HeaderComponent implements OnInit {
     else if (target === "signout") {
       document.cookie = "utoken=0;";
 
-      this.userInfo = null;
+      // this.userInfo = null;
+      this.router.navigate(['/']);
+      window.location.reload();
     }
   }
 
