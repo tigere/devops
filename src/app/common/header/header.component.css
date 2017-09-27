@@ -1,0 +1,24 @@
+.header-comp {
+  position:fixed;
+  top:0;
+  margin: auto;
+  width: 100%;
+  min-width: 750px;
+}
+
+.hc-left {
+  width:50px;
+}
+.hc-rightitem {
+  min-width:100px;
+  height: 54px;
+}
+
+.subitem {
+  padding-top: .7em;
+  padding-bottom: .7em
+}
+
+.title {
+  color: #4183C4;
+}
