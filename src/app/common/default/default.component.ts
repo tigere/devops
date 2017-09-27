@@ -39,6 +39,7 @@ export class DefaultComponent implements OnInit {
         c_start = c_start + c_name.length+1;
         var c_end=document.cookie.indexOf(";",c_start);
         if (c_end==-1) c_end=document.cookie.length;
+
         return decodeURI(document.cookie.substring(c_start,c_end));
       }
     }

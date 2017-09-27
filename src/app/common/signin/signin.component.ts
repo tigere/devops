@@ -85,6 +85,7 @@ export class SigninComponent implements OnInit{
     exdate.setDate(exdate.getDate()+expiredays);
     var ev = value;
     var ex = (expiredays==null) ? "" : ";expires="+exdate.toUTCString()
+
     document.cookie = encodeURI(c_name + "=" + ev + ex);
   }
 
