@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from "@angular/core";
 import {UserInfo} from "../../model/userInfo";
 import {HttpClient} from "@angular/common/http";
+import {UserInfoService} from "../../service/UserInfoService";
 
 @Component({
   selector: 'default-comp',
@@ -12,7 +13,8 @@ export class DefaultComponent implements OnInit {
   @Input() userInfo: UserInfo;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private userInfoService: UserInfoService
   ) {}
 
   ngOnInit(): void {
@@ -21,12 +23,15 @@ export class DefaultComponent implements OnInit {
 
     var ui = this.getCookie('utoken');
     if (ui === '1') {
-      this.userInfo = {
-        id: 1,
-        name: "Tiger",
-        headUrl: "https://semantic-ui.com/images/avatar/small/matt.jpg",
-        admin: false
-      };
+      this.userInfo = this.userInfoService.getUserInfo();
+      // this.userInfo = {
+      //   id: 1,
+      //   name: "Tiger",
+      //   headUrl: "assets/images/avatar/small/matt.jpg",
+      //   admin: false
+      // };
+    } else {
+      this.userInfoService.setUserInfo(null);
     }
   }
 

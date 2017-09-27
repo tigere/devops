@@ -7,8 +7,8 @@ import {SignupComponent} from "./common/signup/signup.component";
 import {PageNotFoundComponent} from "./common/pnf/pnf.component";
 import {DefaultModule} from "./module/default.module";
 import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
 import {HttpClientModule} from "@angular/common/http";
+import {UserInfoService} from "./service/UserInfoService";
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [UserInfoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

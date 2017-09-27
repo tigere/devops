@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Router} from "@angular/router";
+import {UserInfoService} from "../../service/UserInfoService";
 
 @Component({
   selector: 'signin-comp',
@@ -14,7 +15,8 @@ export class SigninComponent implements OnInit{
 
   constructor(
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private userInfoService: UserInfoService
   ) {}
 
   ngOnInit() {
@@ -66,6 +68,13 @@ export class SigninComponent implements OnInit{
       data => {
         if (data === 'Yes') {
           this.setCookie('utoken', '1');
+
+          this.userInfoService.setUserInfo({
+            id: 1,
+            name: "Tiger",
+            headUrl: "assets/images/avatar/large/matt.jpg",
+            admin: false
+          });
 
           this.router.navigate(['/']);
         }

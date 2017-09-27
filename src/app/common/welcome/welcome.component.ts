@@ -1,6 +1,7 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {UserInfo} from "../../model/userInfo";
 import {Router, ParamMap, ActivatedRoute} from "@angular/router";
+import {UserInfoService} from "../../service/UserInfoService";
 
 @Component({
   selector: 'welcome-comp',
@@ -9,11 +10,12 @@ import {Router, ParamMap, ActivatedRoute} from "@angular/router";
 })
 export class WelcomeComponent implements OnInit {
 
-  @Input() userInfo: UserInfo;
+  userInfo: UserInfo;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private userInfoService: UserInfoService
   ) {}
 
   ngOnInit(): void {
@@ -23,6 +25,9 @@ export class WelcomeComponent implements OnInit {
     //     alert(params.get('userInfo'));
     //
     //   });
+
+    this.userInfo = this.userInfoService.getUserInfo();
+
   }
 
 }

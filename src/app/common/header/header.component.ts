@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UserInfo} from "../../model/userInfo";
 import {Router} from "@angular/router";
+import {UserInfoService} from "../../service/UserInfoService";
 
 @Component({
   selector: 'header-comp',
@@ -11,7 +12,9 @@ export class HeaderComponent implements OnInit {
 
   @Input() userInfo: UserInfo;
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
 
@@ -33,25 +36,25 @@ export class HeaderComponent implements OnInit {
       })
     ;
 
-    // this.router.navigate(['welcome']);
-
   }
-
 
   click(target: string): void {
     console.log("======" + target);
-    if (target === "login") {
-      this.router.navigateByUrl("/signin");
-    }
-    else if (target === "home") {
+    if (target === "home") {
       this.router.navigate([""]);
     }
     else if (target === "browse") {
-      // this.router.navigate(["/signin"]);
       this.router.navigate(['/browse']);
-
     }
-
+    else if (target === "message") {
+      this.router.navigate(['/message']);
+    }
+    else if (target === "users") {
+      this.router.navigate(['/users']);
+    }
+    else if (target === "login") {
+      this.router.navigateByUrl("/signin");
+    }
     else if (target === "signout") {
       document.cookie = "utoken=0;";
 

@@ -8,16 +8,14 @@ import {Component, OnInit} from '@angular/core';
 export class NavigateComponent implements OnInit {
 
   ngOnInit(): void {
-    // this.userInfo = {
-    //   id: 1,
-    //   name: "Tiger",
-    //   headUrl: "https://semantic-ui.com/images/avatar/small/matt.jpg",
-    //   admin: false
-    // };
-
-    // this.router.navigate(['/signin']);
-    // using context
-
+    (<any> $('.ui.accordion'))
+      .accordion({
+        selector: {
+          trigger: '.title '
+        },
+        exclusive: false
+      })
+    ;
   }
 
 }
